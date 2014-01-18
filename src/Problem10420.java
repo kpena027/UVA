@@ -11,7 +11,6 @@ public class Problem10420 {
 		int T = sc.nextInt();
 		
 		Map<String, Integer> countCountry = new TreeMap<String, Integer>();
-		List<String> countries = new ArrayList<String>();
 		
 		for (int i = 0; i < T; i++) {
 			String[] line = sc.next().split(" ");
@@ -21,13 +20,14 @@ public class Problem10420 {
 				countCountry.put(firstWord, countCountry.get(firstWord) + 1);
 			} else {
 				countCountry.put(firstWord, 1);
-
 			}
-		}
-        Iterator<Entry<String, Integer>> logIter = countCountry.entrySet().iterator();
+            sc.nextLine();
+        }
+        sc.close();
+        Iterator<Entry<String, Integer>> it = countCountry.entrySet().iterator();
         
-        while (logIter.hasNext()) {
-                Entry<String, Integer> ent = logIter.next();
+        while (it.hasNext()) {
+                Entry<String, Integer> ent = it.next();
                 System.out.println(ent.getKey() + " " + ent.getValue());
         }
 
